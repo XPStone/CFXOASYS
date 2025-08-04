@@ -1,0 +1,81 @@
+{
+  "name": "godooa",
+  "description": "godooa",
+  "version": "1.0.3",
+  "author": "ruitao",
+  "bin":"pkg.js",
+  "scripts": {
+    "start": "node production.js",
+    "dev": "node development.js",
+    "test": "THINK_UNIT_TEST=1 nyc ava test/ && nyc report --reporter=html",
+    "compile": "babel --no-babelrc src/ --presets think-node --out-dir app/",
+    "doc": "apidoc-markdown -i src -t data/doc/tpl.md -o www/docs/doc --multi",
+    "lint": "eslint src/",
+    "lint-fix": "eslint --fix src/"
+  },
+  "pkg": {
+    "assets": [
+      "src/**/*",
+      "view/**/*",
+      "www/**/*"
+    ],
+    "targets": "win",
+    "outputPath": "dist",
+    "mountpoints": {
+      "data": "./data"
+    }
+  },
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "cron-parser": "^4.2.1",
+    "json2md": "^1.12.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa-helmet": "^6.1.0",
+    "koa2-ratelimit": "^0.9.0",
+    "marked": "^5.0.0",
+    "node-xlsx": "^0.21.0",
+    "nodemailer": "^6.7.2",
+    "pdf2json": "^2.0.0",
+    "svg-captcha": "^1.4.0",
+    "think-cache": "^1.0.0",
+    "think-cache-file": "^1.0.8",
+    "think-cache-redis": "^1.2.6",
+    "think-fetch": "^1.1.2",
+    "think-logger3": "^1.0.0",
+    "think-model": "^1.0.0",
+    "think-model-mysql": "^1.0.0",
+    "think-view": "^1.0.13",
+    "think-view-nunjucks": "^1.0.11",
+    "thinkjs": "^3.0.0"
+  },
+  "devDependencies": {
+    "apidoc-markdown": "^7.0.1",
+    "babel-cli": "^6.24.1",
+    "babel-preset-think-node": "^1.0.0",
+    "eslint": "^4.2.0",
+    "eslint-config-think": "^1.0.0",
+    "node-notifier": "^5.0.2",
+    "think-babel": "^1.0.3",
+    "think-inspect": "0.0.2",
+    "think-watcher": "^3.0.0"
+  },
+  "repository": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "readmeFilename": "README.md",
+  "thinkjs": {
+    "metadata": {
+      "name": "godocms",
+      "description": "godo",
+      "author": "ruitao",
+      "babel": true,
+      "defaultModule": "home"
+    },
+    "projectName": "godoos",
+    "template": "/usr/local/lib/node_modules/think-cli/default_template",
+    "clone": false,
+    "isMultiModule": true
+  }
+}

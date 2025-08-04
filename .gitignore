@@ -1,0 +1,16 @@
+node_modules/
+runtime/
+logs/
+.history/
+.vscode/
+.git/
+source/
+app/
+www/web/
+www/docs/
+www/upload/
+www/bak/
+todo.md
+.github/
+dist/
+output.log
